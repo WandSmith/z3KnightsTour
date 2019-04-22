@@ -14,6 +14,6 @@ If the result is unsat, it simply output the sad result in your shell.
 
 If the result is sat, it will automatically open the result demo with your default browser, like this:
 
-![example](example.png)
+![example](https://github.com/WandSmith/z3KnightsTour/blob/master/example.png)
 
 Have funs!
