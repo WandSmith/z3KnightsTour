@@ -37,14 +37,11 @@ def solve(m, n):
         for j in range(n):
             step_c = z3.Or(v[i][j] == 1)
             step = [ (i+m[0],j+m[1]) for m in move]
-            count = 0
             for s in step:
                 if s[0] >= 0 and s[0] < m and s[1] >= 0 and s[1] < n:
                     #step is still in the board, add new constraint
                     step_c = z3.Or(step_c, v[i][j] - v[s[0]][s[1]] == 1)
-                    count += 1
-            if count != 0:
-                solver.add(step_c)
+            solver.add(step_c)
     
     if solver.check() == z3.sat:
         model = solver.model()
